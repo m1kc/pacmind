@@ -1,0 +1,138 @@
+# alexiobash <alexiobash@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: pacmind\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-11 18:54+0200\n"
+"PO-Revision-Date: 2012-07-12 23:32+0100\n"
+"Last-Translator: tomberry88 <tomberry@live.it>\n"
+"Language-Team: www.dark-linux.net <alexiobash@gmail.com>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italiano\n"
+"X-Poedit-Country: ITALIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../pacmind:37
+msgid "Pacmind - Gtk Frontend for Yaourt-Gui"
+msgstr "Pacmind - Diagramm Manager für Yaourt-Gui"
+
+#: ../pacmind:41
+msgid "Sync DB"
+msgstr "Synchronisieren DB"
+
+#: ../pacmind:44
+msgid "Update System"
+msgstr "System Update"
+
+#: ../pacmind:48
+msgid "Update force mode"
+msgstr "Force Update"
+
+#: ../pacmind:53
+msgid "Install Packages"
+msgstr "Installieren Von Paketen"
+
+#: ../pacmind:58
+msgid "Remove Packages"
+msgstr "Entfernen Von Paketen"
+
+#: ../pacmind:63
+msgid "Search Packages"
+msgstr "Suche Von Paketen"
+
+#: ../pacmind:66
+msgid "Search & Install"
+msgstr "Suche & Installieren"
+
+#: ../pacmind:70
+msgid "Belongs To Files"
+msgstr "Die Mitgliedschaft Datei"
+
+#: ../pacmind:75
+msgid "Info Packages"
+msgstr "Info Pakete"
+
+#: ../pacmind:79
+msgid "Install local Packages"
+msgstr "Installieren Sie lokale Pakete"
+
+#: ../pacmind:84
+msgid "Remove Dependencies"
+msgstr "Entfernen Sie unnötige Abhängigkeiten"
+
+#: ../pacmind:89
+msgid "Clear Cache"
+msgstr "Clean Cache"
+
+#: ../pacmind:101
+msgid "Pacman Optimize"
+msgstr "Optimieren Pacman"
+
+#: ../pacmind:108
+msgid "Open PkgBrowser"
+msgstr "Geöffnet PkgBrowser"
+
+#: ../pacmind:119
+msgid "Exit"
+msgstr "Ausgang"
+
+# to pacmind-lunch.sh
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Upgrade successfully"
+msgstr "Upgrade erfolgreich"
+
+msgid "Force upgrade"
+msgstr "Erzwingen Upgrade"
+
+msgid "Upgrade"
+msgstr "Upgrade"
+
+msgid "Informations"
+msgstr "Informationen"
+
+msgid "Pacmind is a Gtk Frontend for Yaourt, based on GTK-Dialog and inspired by Yaourt-Gui"
+msgstr "Pacmind ist ein GTK-Frontend für Yaourt, basierend auf GTK-Dialog und inspiriert von Yaourt-Gui"
+
+msgid "Install one or more packages"
+msgstr "Installieren sie ein oder mehrere pakete"
+
+msgid "In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name"
+msgstr "Bei multiple-choice geben sie ein leerzeichen zwischen dem einen und dem anderen --entry-text=Legen sie paket/e namen"
+
+msgid "Remove one or more packages"
+msgstr "Entfernen sie ein oder mehrere pakete"
+
+msgid "Search e install packages"
+msgstr "Suche e installations pakete"
+
+msgid "Search packages by name or keyword"
+msgstr "Suche pakete über den namen oder suchbegriff"
+
+msgid "For example, for search a pdf reader type pdf"
+msgstr "Zum beispiel für die suche ein pdf reader typ pdf"
+
+msgid "Type keyword"
+msgstr "Geben sie einen schlüsselbegriff"
+
+msgid "Upgrade packages"
+msgstr "Upgrade pakete"
+
+msgid "Update"
+msgstr "Aktualisieren"
+
+msgid "Update repo"
+msgstr "Aktualisieren repo"
+
+msgid "Manually install one or more packages"
+msgstr "Installieren sie manuell ein oder mehrere pakete"
+
+msgid "Press Enter to close the window"
+msgstr "Drücken Sie die Eingabetaste, um das Fenster zu schließen"

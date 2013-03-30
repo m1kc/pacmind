@@ -1,0 +1,132 @@
+#! /bin/bash
+TEXTDOMAINDIR=/usr/share/locale
+TEXTDOMAIN=pacmind
+
+# path pacmind-lunch.sh
+path=/usr/share/pacmind
+
+IMMAGINE=/usr/share/pixmaps/pacmind.png
+
+UPDATE="$path/pacmind-lunch.sh 1"
+UPGRADE="$path/pacmind-lunch.sh 2"
+FORCE="$path/pacmind-lunch.sh 3"
+INSTPAC="$path/pacmind-lunch.sh 4"
+UPPACK="$path/pacmind-lunch.sh 10"
+REMOVE="$path/pacmind-lunch.sh 5"
+SEARCH="$path/pacmind-lunch.sh 6"
+SEARCHINSTALL="$path/pacmind-lunch.sh 7"
+BELONG="$path/pacmind-lunch.sh 8"
+INFOPAC="$path/pacmind-lunch.sh 9"
+DIPENDENZEINUTILI="$path/pacmind-lunch.sh 11"
+CACHE="$path/pacmind-lunch.sh 12"
+PACDIFF="$path/pacmind-lunch.sh 13"
+DBUPGRADE="$path/pacmind-lunch.sh 14"
+OPTIMIZE="$path/pacmind-lunch.sh 15"
+INFO="$path/pacmind-lunch.sh 16"
+
+SYNAPTIC=/usr/local/bin/xlm-synaptic.sh
+
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=pacmind
+
+export MAIN_DIALOG='
+<window title="pacmind"  window_position="1">
+ <vbox>
+<pixmap><input file>'$IMMAGINE'</input></pixmap>
+<text><label>'$(gettext 'Pacmind - Gtk Frontend for Yaourt-Gui')'</label></text>
+<hbox>
+<frame>
+<button><input file icon="gtk-refresh"></input>
+<label>'$(gettext 'Sync DB')'</label>
+<action signal="clicked">'$UPDATE' &</action></button>
+<button><input file icon="gtk-refresh"></input>
+<label>'$(gettext 'Update System')'</label>
+<action signal="clicked">'$UPGRADE' &</action></button>
+<button>
+<input file icon="gtk-dialog-warning"></input>
+<label>'$(gettext 'Update force mode')'</label>
+<action signal="clicked">'$FORCE' &</action>
+</button>
+<button>
+<input file icon="redo"></input>
+<label>'$(gettext 'Install Packages')'</label>
+<action signal="clicked">'$INSTPAC' &</action>
+</button>
+<button>
+<input file icon="gtk-remove"></input>
+<label>'$(gettext 'Remove Packages')'</label>
+<action>'$REMOVE' &</action></button>
+</frame>
+<frame>
+<button><input file icon="gtk-info"></input>
+<label>'$(gettext 'Search Packages')'</label>
+<action signal="clicked">'$SEARCH' &</action></button>
+<button><input file icon="redo"></input>
+<label>'$(gettext 'Search & Install')'</label>
+<action signal="clicked">'$SEARCHINSTALL' &</action></button>
+<button>
+<input file icon="gtk-info"></input>
+<label>'$(gettext 'Belongs To Files')'</label>
+<action signal="clicked">'$BELONG' &</action>
+</button>
+<button>
+<input file icon="gtk-info"></input>
+<label>'$(gettext 'Info Packages')'</label>
+<action>'$INFOPAC' &</action></button>
+<button>
+<input file icon="redo"></input>
+<label>'$(gettext 'Install local Packages')'</label>
+<action>'$UPPACK' &</action></button>
+</frame>
+<frame>
+<button><input file icon="gtk-clear"></input>
+<label>'$(gettext 'Remove Dependencies')'</label>
+<action signal="clicked">'$DIPENDENZEINUTILI' &</action>
+</button>
+<button>
+<input file icon="gtk-clear"></input>
+<label>'$(gettext 'Clear Cache')'</label>
+<action>'$CACHE' &</action></button>
+<button>
+<input file icon="gtk-clear"></input>
+<label>PacDiffViewer</label>
+<action>'$PACDIFF' &</action></button>
+<button>
+<input file icon="gtk-refresh"></input>
+<label>Pacman DB Upgrade</label>
+<action>'$DBUPGRADE' &</action></button>
+<button>
+<input file icon="gtk-refresh"></input>
+<label>'$(gettext 'Pacman Optimize')'</label>
+<action>'$OPTIMIZE' &</action></button>
+</frame>
+</hbox>
+<frame>
+<button>
+<input file icon="gtk-info"></input>
+<label>Archlinux News</label>
+<action signal="clicked">xdg-open "http://www.archlinux.org"</action>
+</button>
+<button>
+<input file icon="search"></input>
+<label>'$(gettext 'Open PkgBrowser')'</label>
+<action signal="clicked">pkgbrowser</action>
+</button>
+</frame>
+<hbox>
+<button>
+<input file icon="gtk-info"></input>
+<label>Info</label>
+<action signal="clicked">'$INFO' &</action>
+</button>
+<button>
+<label>'$(gettext 'Exit')'</label>
+<input file icon="editdelete"></input>
+<action type="exit">exit 0</action>
+</button>
+</hbox>
+</vbox>
+</window>
+'
+
+gtkdialog --program=MAIN_DIALOG

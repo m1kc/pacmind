@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=0.1
+Name=pacmind
+Comment=
+Exec=/usr/bin/pacmind
+Icon=/usr/share/pixmaps/pacmind.svg
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Categories=System;Application;

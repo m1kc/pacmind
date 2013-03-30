@@ -1,0 +1,132 @@
+ pacmind default.po file
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: pacmind 2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-11 18:54+0200\n"
+"PO-Revision-Date: 2012-07-11 18:58+0100\n"
+"Last-Translator: ale_xiovk <alexiobash@gmail.com>\n"
+"Language-Team: www.dark-linux.net <alexiobash@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../pacmind:37
+msgid "Pacmind - Gtk Frontend for Yaourt-Gui"
+msgstr ""
+
+#: ../pacmind:41
+msgid "Sync DB"
+msgstr ""
+
+#: ../pacmind:44
+msgid "Update System"
+msgstr ""
+
+#: ../pacmind:48
+msgid "Update force mode"
+msgstr ""
+
+#: ../pacmind:53
+msgid "Install Packages"
+msgstr ""
+
+#: ../pacmind:58
+msgid "Remove Packages"
+msgstr ""
+
+#: ../pacmind:63
+msgid "Search Packages"
+msgstr ""
+
+#: ../pacmind:66
+msgid "Search & Install"
+msgstr ""
+
+#: ../pacmind:70
+msgid "Belongs To Files"
+msgstr ""
+
+#: ../pacmind:75
+msgid "Info Packages"
+msgstr ""
+
+#: ../pacmind:79
+msgid "Install local Packages"
+msgstr ""
+
+#: ../pacmind:84
+msgid "Remove Dependencies"
+msgstr ""
+
+#: ../pacmind:89
+msgid "Clear Cache"
+msgstr ""
+
+#: ../pacmind:101
+msgid "Pacman Optimize"
+msgstr ""
+
+#: ../pacmind:108
+msgid "Open PkgBrowser"
+msgstr ""
+
+#: ../pacmind:119
+msgid "Exit"
+msgstr ""
+
+# to pacmind-lunch.sh
+msgid "Remove"
+msgstr ""
+
+msgid "Upgrade successfully"
+msgstr ""
+
+msgid "Force upgrade"
+msgstr ""
+
+msgid "Upgrade"
+msgstr ""
+
+msgid "Informations"
+msgstr ""
+
+msgid "Pacmind is a Gtk Frontend for Yaourt, based on GTK-Dialog and inspired by Yaourt-Gui"
+msgstr ""
+
+msgid "Install one or more packages"
+msgstr ""
+
+msgid "In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name"
+msgstr ""
+
+msgid "Remove one or more packages"
+msgstr ""
+
+msgid "Search e install packages"
+msgstr ""
+
+msgid "Search packages by name or keyword"
+msgstr ""
+
+msgid "For example, for search a pdf reader type pdf"
+msgstr ""
+
+msgid "Type keyword"
+msgstr ""
+
+msgid "Upgrade packages"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Update repo"
+msgstr ""
+
+msgid "Manually install one or more packages"
+msgstr ""
+
+msgid "Press Enter to close the window"
+msgstr ""
