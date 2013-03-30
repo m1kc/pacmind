@@ -2,6 +2,7 @@ SHELL = /bin/bash
 INSTALL = /usr//bin/install -c
 MSGFMT = /usr/bin/msgfmt
 SED = /bin/sed
+CUT = /usr/bin/cut
 DESTDIR =
 bindir = /usr/bin
 localedir = /usr/share/locale
@@ -22,9 +23,9 @@ install: all
 	$(INSTALL) -m644 pacmind.png $(DESTDIR)$(icons)
 	$(INSTALL) -m644 pacmind.svg $(DESTDIR)$(icons)
 	$(INSTALL) -m644 pacmind.desktop $(DESTDIR)$(deskdir)
-	for file in po/*.po; \
+	for file in *.po; \
 	do \
-		lang=$$(echo $$file | $(SED) -e 's#.*/\([^/]\+\).po#\1#'); \
+		lang=$$(echo $$file | $(CUT) -d. -f1); \
 		$(INSTALL) -d $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES; \
 		$(MSGFMT) -o $(DESTDIR)$(localedir)/$$lang/LC_MESSAGES/pacmind.mo $$file; \
 	done
