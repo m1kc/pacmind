@@ -9,7 +9,7 @@ pkgver=2.4m
 pkgrel=1
 pkgdesc="An yaourt GUI based on gtkdialog"
 arch=('any')
-url="http://www.xfce-italia.it/index.php?topic=636.0"
+url="https://github.com/m1kc/pacmind"
 license=('GPL')
 depends=('gtkdialog' 'zenity' 'yaourt' 'xterm' 'pkgbrowser' 'sudo')
 optdepends=('yaourt-gui')
