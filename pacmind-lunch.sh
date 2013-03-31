@@ -25,9 +25,7 @@ fuction_belong () {
 			echo ""
 		;;
 	esac
-	echo $text | $XTERM -T "$(gettext 'Belongs To Files')" -e "yaourt -Qo $text
-	$WAIT
-	"
+	echo $text | $XTERM -T "$(gettext 'Belongs To Files')" -e "yaourt -Qo $text; $WAIT"
 }
 
 fuction_clear () {
@@ -38,9 +36,7 @@ fuction_clear () {
 			echo ""
 		;;
 		0)
-			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Sc
-			$WAIT
-			"
+			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Sc; $WAIT"
 		;;
 		1)
 			exit 0
@@ -66,9 +62,7 @@ fuction_dep () {
 			echo ""
 		;;
 		0)
-			xterm -bg black -fg white -T "$(gettext 'Remove Dependencies')" -e "yaourt -R $(yaourt -Qdtq)
-			$WAIT
-			"
+			xterm -bg black -fg white -T "$(gettext 'Remove Dependencies')" -e "yaourt -R $(yaourt -Qdtq); $WAIT"
 		;;
 		1)
 			exit 0
@@ -86,9 +80,7 @@ fuction_force () {
 			echo ""
 		;;
 		0)
-			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syuaf
-			$WAIT
-			"
+			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syuaf; $WAIT"
 		;;
 		1)
 			exit 0
@@ -114,9 +106,7 @@ fuction_info_pkg () {
 			echo ""
 		;;
 	esac
-	echo $text | $XTERM -T "$(gettext 'Info Packages')" -e "yaourt -Qi $text
-	$WAIT
-	"
+	echo $text | $XTERM -T "$(gettext 'Info Packages')" -e "yaourt -Qi $text; $WAIT"
 }
 
 fuction_info () {
@@ -147,9 +137,7 @@ fuction_install () {
 	if text=`zenity --title="$(gettext 'Install Packages')" --entry --text="$(gettext 'Install one or more packages'): 'yaourt -S'
 	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
-	$XTERM -T "$(gettext 'Install Packages')" -e "yaourt -S $text
-	$WAIT
-	"
+	$XTERM -T "$(gettext 'Install Packages')" -e "yaourt -S $text; $WAIT"
 	fi
 }
 
@@ -161,18 +149,14 @@ fuction_optimize () {
 }
 
 fuction_pacdiff () {
-	$XTERM -T "PacDiffViewer" -e "yaourt -C
-	$WAIT
-	"
+	$XTERM -T "PacDiffViewer" -e "yaourt -C; $WAIT"
 }
 
 fuction_remove () {
 	if text=`zenity --title="$(gettext 'Remove Packages')" --entry --text="$(gettext 'Remove one or more packages'): 'yaourt -Rsc'
 	$(gettext 'In case of multiple-choice enter a space between the one and the other')"`
 	then echo $text
-	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -Rsc $text
-	$WAIT
-	"
+	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -Rsc $text; $WAIT"
 	fi
 }
 
@@ -191,9 +175,7 @@ fuction_find_install () {
 			echo ""
 		;;
 	esac
-	echo $text | $XTERM -T "$(gettext 'Search e install package')" -e "yaourt $text
-	$WAIT
-	"
+	echo $text | $XTERM -T "$(gettext 'Search e install package')" -e "yaourt $text; $WAIT"
 }
 
 fuction_find () {
@@ -212,9 +194,7 @@ fuction_find () {
 			echo ""
 		;;
 	esac
-	echo $text | $XTERM -T "$(gettext 'Search Package')" -e "yaourt -Ss $text
-	$WAIT
-	"
+	echo $text | $XTERM -T "$(gettext 'Search Package')" -e "yaourt -Ss $text; $WAIT"
 }
 
 fuction_update () {
@@ -224,9 +204,7 @@ fuction_update () {
 			echo ""
 		;;
 		0)
-			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syua
-			$WAIT
-			"
+			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syua; $WAIT"
 		;;
 		1)
 			exit 0
@@ -244,9 +222,7 @@ fuction_sync () {
 			echo ""
 		;;
 		0)
-			$XTERM -T "$(gettext 'Update repo')" -e "yaourt -Sy
-			$WAIT
-			"
+			$XTERM -T "$(gettext 'Update repo')" -e "yaourt -Sy; $WAIT"
 		;;
 		1)
 			exit 0
@@ -261,9 +237,7 @@ fuction_inman () {
 	if text=`zenity --title="$(gettext 'Install Packages')" --file-selection="$(gettext 'Manually install one or more packages'): 'yaourt -U'
 	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
-	$XTERM -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"
-	$WAIT
-	"
+	$XTERM -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"; $WAIT"
 	fi
 }
 
