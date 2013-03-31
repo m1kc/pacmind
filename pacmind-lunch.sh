@@ -128,7 +128,7 @@ fuction_info () {
 	      <input file>'$info_img'</input>
 	    </pixmap>
 	  <text use-markup="true">
-	    <label>"<b>Pacmind 2.2</b>"</label>
+	    <label>"<b>Pacmind 2.5</b>"</label>
 	  </text>
 	  <text wrap="true" width-chars="50">
 	    <label>'$(gettext 'Pacmind is a Gtk Frontend for Yaourt, based on GTK-Dialog and inspired by Yaourt-Gui')'</label>
