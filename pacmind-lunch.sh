@@ -3,25 +3,28 @@ TEXTDOMAINDIR=/usr/share/locale
 TEXTDOMAIN=pacmind
 img=/usr/share/pixmaps/pacmind.png
 
+XTERM="xterm"
+#which lxterminal && XTERM="lxterminal"
+
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=pacmind
 
 fuction_belong () {
-	text=`zenity --title="$(gettext 'Belongs To Files') --entry --text="$(gettext 'Search package containing the file:') 'yaourt -Qo'"` 
+	text=`zenity --title="$(gettext 'Belongs To Files') --entry --text="$(gettext 'Search package containing the file:') 'yaourt -Qo'"`
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
 		;;
 	esac
-	echo $text | xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Belongs To Files')" -e "yaourt -Qo $text
+	echo $text | $XTERM -T "$(gettext 'Belongs To Files')" -e "yaourt -Qo $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 }
@@ -31,15 +34,15 @@ fuction_clear () {
 	'yaourt -Scc'" --ok-label="$(gettext 'Remove')" --cancel-label="$(gettext 'Exit')"
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
-			xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Clear Cache')" -e "yaourt -Scc
+			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Scc
 			read -sp \"$(gettext 'Press Enter to close the window') \"
 			"
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
@@ -48,7 +51,7 @@ fuction_clear () {
 }
 
 fuction_db_upgrade () {
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "Pacman DB Upgrade" -e "sudo pacman-db-upgrade
+	$XTERM -T "Pacman DB Upgrade" -e "sudo pacman-db-upgrade
 	read -sp \"$(gettext 'Upgrade successfully').
 	$(gettext 'Press Enter to close the window') \"
 	"
@@ -59,7 +62,7 @@ fuction_dep () {
 	'yaourt -R $(yaourt -Qdtq)'" --ok-label="$(gettext 'Remove')" --cancel-label="$(gettext 'Exit')"
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
 			xterm -bg black -fg white -T "$(gettext 'Remove Dependencies')" -e "yaourt -R $(yaourt -Qdtq)
@@ -67,7 +70,7 @@ fuction_dep () {
 			"
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
@@ -79,15 +82,15 @@ fuction_force () {
 	zenity --question --title="$(gettext 'Update force mode')" --text="$(gettext 'Force upgrade'): 'yaourt -Syuaf'" --ok-label="$(gettext 'Upgrade')" --cancel-label="Exit"
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
-			xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Update System')" -e "yaourt -Syuaf
+			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syuaf
 			read -sp \"$(gettext 'Press Enter to close the window') \"
 			"
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
@@ -96,21 +99,21 @@ fuction_force () {
 }
 
 fuction_info_pkg () {
-	text=`zenity --title="$(gettext 'Search Packages')" --entry --text="$(gettext 'Search Packages') : 'yaourt -Qi'"` 
+	text=`zenity --title="$(gettext 'Search Packages')" --entry --text="$(gettext 'Search Packages') : 'yaourt -Qi'"`
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
 		;;
 	esac
-	echo $text | xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Info Packages')" -e "yaourt -Qi $text
+	echo $text | $XTERM -T "$(gettext 'Info Packages')" -e "yaourt -Qi $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 }
@@ -141,74 +144,74 @@ fuction_info () {
 
 fuction_install () {
 	if text=`zenity --title="$(gettext 'Install Packages')" --entry --text="$(gettext 'Install one or more packages'): 'yaourt -S'
-	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"` 
+	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Install Packages')" -e "yaourt -S $text
+	$XTERM -T "$(gettext 'Install Packages')" -e "yaourt -S $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 	fi
 }
 
 fuction_optimize () {
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "Optimizes Pacman" -e "sudo pacman-optimize
+	$XTERM -T "Optimizes Pacman" -e "sudo pacman-optimize
 	read -sp \"
 	$(gettext 'Press Enter to close the window') \"
 	"
 }
 
 fuction_pacdiff () {
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "PacDiffViewer" -e "yaourt -C
+	$XTERM -T "PacDiffViewer" -e "yaourt -C
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 }
 
 fuction_remove () {
 	if text=`zenity --title="$(gettext 'Remove Packages')" --entry --text="$(gettext 'Remove one or more packages'): 'yaourt -R'
-	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"` 
+	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Remove Packages')" -e "yaourt -R $text
+	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -R $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 	fi
 }
 
 fuction_find_install () {
-	text=`zenity --title="$(gettext 'Search e install packages')" --entry --text="$(gettext 'Search e install packages'): 'yaourt'"` 
+	text=`zenity --title="$(gettext 'Search e install packages')" --entry --text="$(gettext 'Search e install packages'): 'yaourt'"`
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
 		;;
 	esac
-	echo $text | xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Search e install package')" -e "yaourt $text
+	echo $text | $XTERM -T "$(gettext 'Search e install package')" -e "yaourt $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 }
 
 fuction_find () {
 	text=`zenity --title="$(gettext 'Search Packages')" --entry --text="$(gettext 'Search packages by name or keyword'): 'yaourt -Ss'
-	$(gettext 'For example, for search a pdf reader type pdf')" --entry-text="$(gettext 'Type keyword')"` 
+	$(gettext 'For example, for search a pdf reader type pdf')" --entry-text="$(gettext 'Type keyword')"`
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
 		;;
 	esac
-	echo $text | xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Search Package')" -e "yaourt -Ss $text
+	echo $text | $XTERM -T "$(gettext 'Search Package')" -e "yaourt -Ss $text
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 }
@@ -217,15 +220,15 @@ fuction_update () {
 	zenity --question --title="$(gettext 'Update System')" --text="$(gettext 'Upgrade packages'): 'yaourt -Syua'" --ok-label="$(gettext 'Update')" --cancel-label="$(gettext 'Exit')"
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
-			xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Update System')" -e "yaourt -Syua
+			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syua
 			read -sp \"$(gettext 'Press Enter to close the window') \"
 			"
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
@@ -237,15 +240,15 @@ fuction_sync () {
 	zenity --question --title="$(gettext 'Sync DB')" --text="$(gettext 'Update repo'): 'yaourt -Sy'" --ok-label="$(gettext 'Update')" --cancel-label="$(gettext 'Exit')"
 	case $? in
 		-1)
-			echo "" 
+			echo ""
 		;;
 		0)
-			xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Update repo')" -e "yaourt -Sy
+			$XTERM -T "$(gettext 'Update repo')" -e "yaourt -Sy
 			read -sp \"$(gettext 'Press Enter to close the window') \"
 			"
 		;;
 		1)
-			exit 0 
+			exit 0
 		;;
 		5)
 			echo ""
@@ -255,9 +258,9 @@ fuction_sync () {
 
 fuction_inman () {
 	if text=`zenity --title="$(gettext 'Install Packages')" --file-selection="$(gettext 'Manually install one or more packages'): 'yaourt -U'
-	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"` 
+	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
-	xterm -fn *-*-fixed-medium-r-normal--*-140-*-*-*-*-iso8859-7 -bg black -fg white -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"
+	$XTERM -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"
 	read -sp \"$(gettext 'Press Enter to close the window') \"
 	"
 	fi
