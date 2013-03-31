@@ -18,7 +18,7 @@ source=('Makefile'
         'COPYING'
         'pacmind.png' 'pacmind.svg'
         'pacmind.desktop'
-        'de.po' 'en.po' 'fr.po' 'it.po'
+        'de.po' 'en.po' 'fr.po' 'it.po' 'ru.po'
         )
 
 package() {
@@ -36,5 +36,6 @@ md5sums=('849d9aef41ebfd4b036a72194df7bf28'
          '41ed0b157c833cc63d6364fb81d133a9'
          'f3497ea07f59ef3cf6d36ca334d248d4'
          '77be280012c3faf3a01e038fe5a23cf3'
-         '8c1c360638d569d0c9b9dcdd49f79214')
+         '8c1c360638d569d0c9b9dcdd49f79214'
+         'cb72336f4d634f2ee2c66200044c9027')
 
