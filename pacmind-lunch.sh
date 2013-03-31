@@ -5,6 +5,7 @@ img=/usr/share/pixmaps/pacmind.png
 
 XTERM="xterm"
 #which lxterminal && XTERM="lxterminal"
+WAIT="echo $(gettext 'Press Enter to close the window'); read"
 
 export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=pacmind
@@ -25,7 +26,7 @@ fuction_belong () {
 		;;
 	esac
 	echo $text | $XTERM -T "$(gettext 'Belongs To Files')" -e "yaourt -Qo $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 }
 
@@ -38,7 +39,7 @@ fuction_clear () {
 		;;
 		0)
 			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Scc
-			read -sp \"$(gettext 'Press Enter to close the window') \"
+			$WAIT
 			"
 		;;
 		1)
@@ -66,7 +67,7 @@ fuction_dep () {
 		;;
 		0)
 			xterm -bg black -fg white -T "$(gettext 'Remove Dependencies')" -e "yaourt -R $(yaourt -Qdtq)
-			read -sp \"$(gettext 'Press Enter to close the window') \"
+			$WAIT
 			"
 		;;
 		1)
@@ -86,7 +87,7 @@ fuction_force () {
 		;;
 		0)
 			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syuaf
-			read -sp \"$(gettext 'Press Enter to close the window') \"
+			$WAIT
 			"
 		;;
 		1)
@@ -114,14 +115,14 @@ fuction_info_pkg () {
 		;;
 	esac
 	echo $text | $XTERM -T "$(gettext 'Info Packages')" -e "yaourt -Qi $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 }
 
 fuction_info () {
 	info_img=/usr/share/pixmaps/pacmind.png
 	export MAIN_DIALOG='
-	 <window title="$(gettext 'Informations')"  window_position="1">
+	 <window title="'$(gettext 'Informations')'"  window_position="1">
 	 <vbox>
 	  <pixmap>
 	      <input file>'$info_img'</input>
@@ -147,7 +148,7 @@ fuction_install () {
 	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
 	$XTERM -T "$(gettext 'Install Packages')" -e "yaourt -S $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 	fi
 }
@@ -161,7 +162,7 @@ fuction_optimize () {
 
 fuction_pacdiff () {
 	$XTERM -T "PacDiffViewer" -e "yaourt -C
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 }
 
@@ -170,7 +171,7 @@ fuction_remove () {
 	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
 	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -R $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 	fi
 }
@@ -191,7 +192,7 @@ fuction_find_install () {
 		;;
 	esac
 	echo $text | $XTERM -T "$(gettext 'Search e install package')" -e "yaourt $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 }
 
@@ -212,7 +213,7 @@ fuction_find () {
 		;;
 	esac
 	echo $text | $XTERM -T "$(gettext 'Search Package')" -e "yaourt -Ss $text
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 }
 
@@ -224,7 +225,7 @@ fuction_update () {
 		;;
 		0)
 			$XTERM -T "$(gettext 'Update System')" -e "yaourt -Syua
-			read -sp \"$(gettext 'Press Enter to close the window') \"
+			$WAIT
 			"
 		;;
 		1)
@@ -244,7 +245,7 @@ fuction_sync () {
 		;;
 		0)
 			$XTERM -T "$(gettext 'Update repo')" -e "yaourt -Sy
-			read -sp \"$(gettext 'Press Enter to close the window') \"
+			$WAIT
 			"
 		;;
 		1)
@@ -261,7 +262,7 @@ fuction_inman () {
 	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
 	then echo $text
 	$XTERM -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"
-	read -sp \"$(gettext 'Press Enter to close the window') \"
+	$WAIT
 	"
 	fi
 }
