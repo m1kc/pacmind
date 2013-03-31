@@ -234,8 +234,7 @@ fuction_sync () {
 }
 
 fuction_inman () {
-	if text=`zenity --title="$(gettext 'Install Packages')" --file-selection="$(gettext 'Manually install one or more packages'): 'yaourt -U'
-	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
+	if text=`zenity --title="$(gettext 'Install Packages'): 'yaourt -U'" --file-selection`
 	then echo $text
 	$XTERM -T "$(gettext 'Manually install one or more packages')" -e "yaourt -U \"$text\"; $WAIT"
 	fi
