@@ -32,13 +32,13 @@ fuction_belong () {
 
 fuction_clear () {
 	zenity --question --title="$(gettext 'Clear Cache')" --text="$(gettext 'Clear Cache'):
-	'yaourt -Scc'" --ok-label="$(gettext 'Remove')" --cancel-label="$(gettext 'Exit')"
+	'yaourt -Sc'" --ok-label="$(gettext 'Remove')" --cancel-label="$(gettext 'Exit')"
 	case $? in
 		-1)
 			echo ""
 		;;
 		0)
-			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Scc
+			$XTERM -T "$(gettext 'Clear Cache')" -e "yaourt -Sc
 			$WAIT
 			"
 		;;
