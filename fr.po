@@ -104,13 +104,13 @@ msgstr "Pacmind est une interface GTK pour Yaourt, basé sur GTK-Dialog et inspi
 msgid "Install one or more packages"
 msgstr "Installez un ou plusieurs paquets"
 
-msgid "In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name"
-msgstr "En cas de questions à choix multiple entrer dans un espace entre l'un et l'autre --entry-text=Insérez paquet/s nom"
+msgid "In case of multiple-choice enter a space between the one and the other"
+msgstr "En cas de questions à choix multiple entrer dans un espace entre l'un et l'autre"
 
 msgid "Remove one or more packages"
 msgstr "Supprimer un ou plusieurs paquets"
 
-msgid "Search e install packages"
+msgid "Search and install packages"
 msgstr "Recherche et installation des paquets"
 
 msgid "Search packages by name or keyword"

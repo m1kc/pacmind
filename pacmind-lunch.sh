@@ -11,7 +11,7 @@ export TEXTDOMAINDIR=/usr/share/locale
 export TEXTDOMAIN=pacmind
 
 fuction_belong () {
-	text=`zenity --title="$(gettext 'Belongs To Files') --entry --text="$(gettext 'Search package containing the file:') 'yaourt -Qo'"`
+	text=`zenity --title="$(gettext 'Belongs To Files')" --entry --text="$(gettext 'Search package containing the file:') 'yaourt -Qo'"`
 	case $? in
 		-1)
 			echo ""
@@ -167,17 +167,17 @@ fuction_pacdiff () {
 }
 
 fuction_remove () {
-	if text=`zenity --title="$(gettext 'Remove Packages')" --entry --text="$(gettext 'Remove one or more packages'): 'yaourt -R'
-	$(gettext 'In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name')"`
+	if text=`zenity --title="$(gettext 'Remove Packages')" --entry --text="$(gettext 'Remove one or more packages'): 'yaourt -Rsc'
+	$(gettext 'In case of multiple-choice enter a space between the one and the other')"`
 	then echo $text
-	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -R $text
+	$XTERM -T "$(gettext 'Remove Packages')" -e "yaourt -Rsc $text
 	$WAIT
 	"
 	fi
 }
 
 fuction_find_install () {
-	text=`zenity --title="$(gettext 'Search e install packages')" --entry --text="$(gettext 'Search e install packages'): 'yaourt'"`
+	text=`zenity --title="$(gettext 'Search and install packages')" --entry --text="$(gettext 'Search and install packages'): 'yaourt'"`
 	case $? in
 		-1)
 			echo ""

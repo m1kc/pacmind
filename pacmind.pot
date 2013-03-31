@@ -1,4 +1,3 @@
- pacmind default.po file
 #, fuzzy
 msgid ""
 msgstr ""
@@ -98,13 +97,13 @@ msgstr ""
 msgid "Install one or more packages"
 msgstr ""
 
-msgid "In case of multiple-choice enter a space between the one and the other --entry-text=Insert package/s name"
+msgid "In case of multiple-choice enter a space between the one and the other"
 msgstr ""
 
 msgid "Remove one or more packages"
 msgstr ""
 
-msgid "Search e install packages"
+msgid "Search and install packages"
 msgstr ""
 
 msgid "Search packages by name or keyword"
